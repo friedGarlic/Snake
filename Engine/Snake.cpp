@@ -54,7 +54,8 @@ void Snake::Grow()
 void Snake::MoveBy(const Vei2& delta_pos)
 {
 	//for (int i = nSegment - 1; i < maxSegment; i++); this process the head too thats why it doesnt move
-	for (int i = nSegment - 1; i > 0; i++)
+	//(int i = nSegment - 1; i < maxSegment; i++) 
+	for (int i = nSegment - 1; i > 0; i--) //decrement i until reach head and stop not processing the head
 	{
 		segment[i].Follow(segment[i - 1]);
 	}
