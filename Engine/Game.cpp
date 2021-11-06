@@ -59,12 +59,17 @@ void Game::UpdateModel()
 		move_by = { 1, 0 };
 	}
 
-	//grow first before moving
-	if (wnd.kbd.KeyIsPressed(VK_CONTROL))
+	speed++;
+	if (speed < maxSpeed)
 	{
-		snek.Grow();
+		speed = 0;
+		//grow first before moving
+		if (wnd.kbd.KeyIsPressed(VK_CONTROL))
+		{
+			snek.Grow();
+		}
+		snek.MoveBy(move_by);
 	}
-	snek.MoveBy(move_by);
 
 }
 

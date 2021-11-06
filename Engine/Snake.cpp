@@ -8,7 +8,8 @@ void Snake::Segment::Head(const Vei2& in_pos)
 
 void Snake::Segment::Body()
 {
-	Color body = Snake::bodyColor;
+	//Color body = Snake::bodyColor;
+	c = Snake::bodyColor;
 }
 
 void Snake::Segment::Draw(Board& brd) const
@@ -21,8 +22,9 @@ void Snake::Segment::MoveBy(const Vei2& in_pos)
 	pos.add(in_pos);
 }
 
-void Snake::Segment::Follow(Segment& body)
+void Snake::Segment::Follow(const Segment& body)
 {
+	//error
 	pos = body.pos;
 }
 
@@ -41,6 +43,7 @@ void Snake::Draw(Board& brd) const
 
 void Snake::Grow()
 {
+	//when it grows the segment doesnt know the location to move
 	if (nSegment < maxSegment)
 	{
 		nSegment++;

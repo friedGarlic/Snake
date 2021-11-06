@@ -48,5 +48,7 @@ private:
 	Board brd;
 	Vei2 move_by = { 1 , 0 };
 	Snake snek;
+	int speed = 1;
+	const int maxSpeed = 10;
 	/********************************/
 };

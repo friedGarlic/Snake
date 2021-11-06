@@ -12,7 +12,7 @@ private:
 		void Body();
 		void Draw(Board& brd) const;
 		void MoveBy(const Vei2& pos);
-		void Follow(Segment& body);
+		void Follow(const Segment& body);
 	private:
 		Vei2 pos;
 		Color c;
