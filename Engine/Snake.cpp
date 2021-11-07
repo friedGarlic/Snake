@@ -24,6 +24,7 @@ void Snake::Segment::MoveBy(const Vei2& in_pos)
 
 void Snake::Segment::Follow(const Segment& body)
 {
+	//error
 	pos = body.pos;
 }
 
