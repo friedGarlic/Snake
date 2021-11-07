@@ -9,7 +9,7 @@ public:
 	//Vei2& operator==(const Vei2& rhs) const made a mistake here
 	bool operator==(const Vei2& rhs) const
 	{
-		return *this == rhs;
+		return x == rhs.x && y == rhs.y;
 	}
 public:
 	int x;

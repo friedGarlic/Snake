@@ -22,10 +22,10 @@ public:
 	{
 		return height;
 	}
-	bool IsInsideBoard(const Vei2& pos)
+	bool IsInsideBoard(const Vei2& pos) const
 	{
-		return pos.x > 0 && pos.y > 0 &&
-			pos.x <= width&& pos.y <= height;
+		return pos.x >= 0 && pos.y >= 0 &&
+			pos.x <= width && pos.y <= height;
 	}
 private:
 	static constexpr int width = 14;

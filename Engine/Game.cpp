@@ -21,13 +21,14 @@
 #include "MainWindow.h"
 #include "Game.h"
 #include <random>
+#include "SpriteCodex.h"
 
 Game::Game(MainWindow& wnd)
 	:
 	wnd(wnd),
 	gfx(wnd),
 	brd(gfx),
-	snek(Vei2{0,50})
+	snek(Vei2{50,50})
 	
 {
 }
@@ -71,9 +72,21 @@ void Game::UpdateModel()
 		snek.MoveBy(move_by);
 	}
 
+	Vei2 headPos = snek.GetHeadNextLocation(move_by);
+	if (snek.CollidingToBody(headPos) || 
+		!brd.IsInsideBoard(headPos)/*doesnt seem to work well*/)
+	{
+		GameIsOver = true;
+	}
+
 }
 
 void Game::ComposeFrame()
 {
 	snek.Draw(brd);
+
+	if (GameIsOver)
+	{
+		SpriteCodex::DrawGameOver(250, 250, gfx);
+	}
 }

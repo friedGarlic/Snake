@@ -50,5 +50,6 @@ private:
 	Snake snek;
 	int speed = 1;
 	const int maxSpeed = 20;
+	bool GameIsOver = false;
 	/********************************/
 };
