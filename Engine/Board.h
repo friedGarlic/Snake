@@ -22,6 +22,11 @@ public:
 	{
 		return height;
 	}
+	bool IsInsideBoard(const Vei2& pos)
+	{
+		return pos.x > 0 && pos.y > 0 &&
+			pos.x <= width&& pos.y <= height;
+	}
 private:
 	static constexpr int width = 14;
 	static constexpr int height = 20;

@@ -60,7 +60,7 @@ void Game::UpdateModel()
 	}
 
 	speed++;
-	if (speed < maxSpeed)
+	if (speed > maxSpeed)
 	{
 		speed = 0;
 		//grow first before moving

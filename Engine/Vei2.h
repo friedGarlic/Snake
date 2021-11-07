@@ -6,7 +6,11 @@ public:
 		x += in_pos.x;
 		y += in_pos.y;
 	}
-
+	//Vei2& operator==(const Vei2& rhs) const made a mistake here
+	bool operator==(const Vei2& rhs) const
+	{
+		return *this == rhs;
+	}
 public:
 	int x;
 	int y;
