@@ -79,3 +79,10 @@ bool Snake::CollidingToBody(const Vei2& target) const
 	}
 	return false;
 }
+
+Vei2 Snake::GetHeadNextLocation(const Vei2& pos) const
+{
+	Vei2 l = segment[0].GetPos();
+	l.add(pos);
+	return l;
+}

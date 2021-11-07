@@ -29,7 +29,7 @@ public:
 	void Grow();
 	void MoveBy(const Vei2& delta_pos);
 	bool CollidingToBody(const Vei2& pos) const;
-	Vei2 GetHeadLocation(const Vei2& pos) const;
+	Vei2 GetHeadNextLocation(const Vei2& pos) const;
 
 private:
 	static constexpr Color headColor = Colors::Red;
