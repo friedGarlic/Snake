@@ -28,7 +28,7 @@ Game::Game(MainWindow& wnd)
 	wnd(wnd),
 	gfx(wnd),
 	brd(gfx),
-	snek(Vei2{50,50})
+	snek(Vei2{10,10})
 	
 {
 }
@@ -74,7 +74,7 @@ void Game::UpdateModel()
 
 	Vei2 headPos = snek.GetHeadNextLocation(move_by);
 	if (snek.CollidingToBody(headPos) || 
-		!brd.IsInsideBoard(headPos)/*doesnt seem to work well*/)
+		!brd.IsInsideBoard(headPos))
 	{
 		GameIsOver = true;
 	}
