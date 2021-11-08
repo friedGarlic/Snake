@@ -89,4 +89,5 @@ void Game::ComposeFrame()
 	{
 		SpriteCodex::DrawGameOver(250, 250, gfx);
 	}
+	brd.Border();
 }
