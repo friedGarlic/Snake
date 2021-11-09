@@ -31,30 +31,29 @@ public:
 	}
 	void Border()
 	{
-		const int left = y;
-		const int right = x;
-		const int bottom = x + width + borderWidth;
-		const int top = y + height + borderWidth;
-
-		//gfx.DrawRect(left, top, bottom, right, color)
+		const int top = y;
+		const int left = x;
+		const int right = left + width * dimension;
+		const int bottom = top + height * dimension;
+		//gfx.DrawRect(x0,y0,x1,y1,c)
 		//top
-		gfx.DrawRect(left, borderWidth,top,right, borderColor);
+		gfx.DrawRect(left, top, right, top + borderWidth, borderColor);
 		//left
-		gfx.DrawRect(left, top, borderWidth, right, borderColor);
+		gfx.DrawRect(left, top + borderWidth, left + borderWidth, bottom - borderWidth, borderColor);
 		//right
-		gfx.DrawRect(top - left, top, bottom, borderWidth, borderColor);
+		gfx.DrawRect(right - borderWidth, top + borderWidth, right, bottom, borderColor);
 		//bottom
-		gfx.DrawRect(borderWidth, top, bottom , bottom - right, borderColor);
+		gfx.DrawRect(left, bottom - borderWidth, right - borderWidth, bottom, borderColor);
 	}
 
 
 private:
 	Color borderColor = Colors::LightGray;
 	int x = 15;
-	int y = 15;
+	int y = 35;
 	int borderWidth = 10;
-	static constexpr int width = 500;
-	static constexpr int height = 500;
+	static constexpr int width = 40;
+	static constexpr int height = 50;
 	static constexpr int dimension = 10;
 	Graphics& gfx;
 };
