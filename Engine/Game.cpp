@@ -28,7 +28,7 @@ Game::Game(MainWindow& wnd)
 	wnd(wnd),
 	gfx(wnd),
 	brd(gfx),
-	snek(Vei2{10,10})
+	snek(Vei2{20,40})
 	
 {
 }

@@ -49,8 +49,8 @@ public:
 
 private:
 	Color borderColor = Colors::LightGray;
-	int x = 15;
-	int y = 35;
+	int x = 0;
+	int y = 0;
 	int borderWidth = 10;
 	static constexpr int width = 40;
 	static constexpr int height = 50;
